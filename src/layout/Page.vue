@@ -7,20 +7,45 @@
 </script>
 
 <template>
-    <section class="bg-movie-black flex h-full min-w-0 flex-1 flex-col">
-        <div class="mx-4 my-9 flex justify-between">
-            <h1 v-if="title" class="text-4xl font-weight-900 font-bold text-white">
-                {{title}}
-            </h1>
-            <h1 v-else>
-                <slot name="title" />
-            </h1>
-            <div>
-                <slot name="header" />
-            </div>
+    <section class="page-section">
+        <h1 v-if="title" class="page-title">
+            {{title}}
+        </h1>
+        <h1 v-else>
+            <slot name="title" />
+        </h1>
+        <div>
+            <slot name="header" />
         </div>
-        <div class="mx-4 h-full overflow-y-auto">
+        <div class="page-content">
             <slot />
         </div>
     </section>
 </template>
+
+<style scoped>
+    .page-section {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        margin: 20px 30px 10px 30px;
+    }
+
+    .page-title {
+        color: white;
+        font-size: 38px;
+        font-weight: bold;
+
+    }
+
+    .page-content {
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    @media screen and (max-width: 800px) {
+        .page-section {
+            margin: 20px 8px 10px 8px;
+        }
+    }
+</style>

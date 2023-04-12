@@ -1,16 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,400;1,600&display=swap');
 
-html {
-    @apply h-full;
+:root {
+  --movie-black: #1d2024;
+  --movie-black-200: #1f2326;
+  --movie-black-400: #282c31;
+  --movie-orange: #f37515;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  50% {
+      opacity: .5;
   }
-  body {
-    @apply h-full;
-  }
-  div#__next {
-    @apply h-full;
-  }
-  main {
-    @apply h-full;
-  }
+}
